@@ -1,0 +1,12 @@
+# This repo is PUBLIC — client work never goes in it.
+projects/
+
+# Solution zips, app packages and deployment settings can contain client data/config
+*.zip
+*.msapp
+settings.json
+.env
+
+# Local Claude Code settings
+.claude/settings.local.json
+__pycache__/
