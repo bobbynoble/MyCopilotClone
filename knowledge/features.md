@@ -49,3 +49,6 @@ replying to emails, publishing to the web with SSO, and multi-agent orchestratio
 Other recent repos worth knowing: `copilot-studio-transcript-viewer` (Power Apps code app),
 `powerapps-custom-functions`, `M365-Agent-Tutorials`, `maf-firstagent` (Microsoft Agent
 Framework), `fastmcp-mcpapps-quickstart` and `M365-MCP-Apps-Dataverse-Calendar` (MCP Apps).
+
+## Added 2026-10-19
+- **Microsoft 365 Agents Toolkit — custom API for an agent** (status not confirmed on Learn): add any OpenAPI-described service as a read/write tool beyond standard connectors. Source: [Devaney, 2026-10-18](https://www.matthewdevaney.com/video-m365-agents-toolkit-add-a-custom-api-to-an-agent/).
