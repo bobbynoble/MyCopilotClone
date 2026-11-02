@@ -32,10 +32,12 @@ Maintained by `knowledge-refresh`. Status as of the date shown. Source: Microsof
 | Condition groups | Live | Jun 2026 | |
 | VS Code Copilot Studio extension | GA | Jan 2026 | |
 | Human review / request information action | Preview → in use | Nov 2025 | Devaney tutorial Sep 2026 |
+| Hooks (event-triggered workflows: conversation start, tool selection, error) | Unverified, not yet on Learn | Nov 2026 | Devaney video 2026-11-01; confirm status before recommending |
 
 ## Devaney build patterns (recent)
 | Date | Pattern | Link |
 |---|---|---|
+| 2026-10-26 | M365 Agents Toolkit: custom API (Postman → OpenAPI → Add Action) | https://www.matthewdevaney.com/m365-agents-toolkit-add-a-custom-api-to-an-agent/ |
 | 2026-10-11 | Extract node: document fields into a SharePoint library | https://www.matthewdevaney.com/how-to-extract-data-from-pdfs-word-excel-in-copilot-studio/ |
 | 2026-09-27 | Human review on AI decisions with an audit trail | https://www.matthewdevaney.com/copilot-studio-ask-for-human-review-on-ai-decisions/ |
 | 2026-09-13 | Multi-agent workflows: narrow agents, parallel branches, deterministic rules | https://www.matthewdevaney.com/how-to-build-multi-agent-workflows-in-copilot-studio/ |
