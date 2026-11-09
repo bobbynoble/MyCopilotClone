@@ -86,6 +86,12 @@ Write agent instructions under these headings: **Role**, **Scope** (what it does
 - MCP servers: prefer certified or well-maintained servers, and scope them to the minimum operations.
 - Connector tools: add only the operations needed, each with a description.
 - Computer use (GA): only where no API exists. Use pooled Cloud PCs, built-in credentials and audit logging.
+- **Hooks**: run a workflow at set points (conversation start, prompt submitted, **pre tool use**) to
+  make an agent predictable. Use a pre-tool-use hook as a guardrail where an MCP server can't limit
+  scope itself (e.g. allow only named SharePoint lists): scope the trigger to specific tools, return
+  `permissionDecision` plus a clear `permissionDecisionReason`, and read allowed IDs from environment
+  variables, not hardcoded values. Check run history in testing. Status isn't stated in the source;
+  confirm on Microsoft Learn before committing a client design to it.
 
 ## 9. ALM
 - Build inside a solution with environment variables and connection references.

@@ -3,7 +3,7 @@
 Maintained by `knowledge-refresh`. Status as of the date shown. Source: Microsoft Learn
 *What's new* unless noted. Always re-check before you commit a client design to a feature.
 
-| Feature | Status (as of 2026-10-15) | Since | Notes |
+| Feature | Status (as of 2026-11-09) | Since | Notes |
 |---|---|---|---|
 | New experience / GitHub Copilot harness | Production-ready preview | Jun 2026 | Enhanced orchestration runtime alongside the standard harness |
 | Skills (SKILL.md + scripts + assets) | Harness feature | Jun 2026 | Reusable, exportable; Python runtime with 50+ packages (Devaney, Aug 2026) |
@@ -31,11 +31,18 @@ Maintained by `knowledge-refresh`. Status as of the date shown. Source: Microsof
 | Prompt node in agent flows | Live | May 2026 | |
 | Condition groups | Live | Jun 2026 | |
 | VS Code Copilot Studio extension | GA | Jan 2026 | |
+| Hooks (conversation start, prompt submitted, pre tool use → workflow) | Status unconfirmed (not on What's new yet) | Nov 2026 | Devaney tutorial 2026-11-09; guardrail for tools, returns allow/deny + reason |
+| Claude Sonnet 5 / GPT-5.5 Chat as primary model | GA | Jun 2026 | Harness agents |
+| MCP server Microsoft certification | Preview | Jul 2026 | Submit servers for certification |
+| Windows 365 for Agents MCP server | GA | Jun 2026 | Cloud PC control |
+| Agent readiness / status page | Preview | May 2026 | Surfaces publish errors and config blocks |
 | Human review / request information action | Preview → in use | Nov 2025 | Devaney tutorial Sep 2026 |
 
 ## Devaney build patterns (recent)
 | Date | Pattern | Link |
 |---|---|---|
+| 2026-11-09 | Agent hooks: pre-tool-use workflow allow-list guardrail | https://www.matthewdevaney.com/how-to-use-agent-hooks-in-copilot-studio/ |
+| 2026-10-26 | M365 Agents Toolkit: custom API action (Postman → OpenAPI → Add Action; add API-key security by hand; personal scope while testing) | https://www.matthewdevaney.com/m365-agents-toolkit-add-a-custom-api-to-an-agent/ |
 | 2026-10-11 | Extract node: document fields into a SharePoint library | https://www.matthewdevaney.com/how-to-extract-data-from-pdfs-word-excel-in-copilot-studio/ |
 | 2026-09-27 | Human review on AI decisions with an audit trail | https://www.matthewdevaney.com/copilot-studio-ask-for-human-review-on-ai-decisions/ |
 | 2026-09-13 | Multi-agent workflows: narrow agents, parallel branches, deterministic rules | https://www.matthewdevaney.com/how-to-build-multi-agent-workflows-in-copilot-studio/ |
