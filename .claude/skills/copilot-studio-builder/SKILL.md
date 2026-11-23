@@ -5,7 +5,7 @@ description: Design and build Microsoft Copilot Studio agents and workflows — 
 
 # Copilot Studio Builder
 
-Last refreshed: 2026-10-15 (see `knowledge/updates/`). The platform changes monthly. Mark
+Last refreshed: 2026-11-23 (see `knowledge/updates/`). The platform changes monthly. Mark
 preview features `(preview)`, and check Microsoft Learn's *What's new* before you commit a client
 design to a feature. Detailed feature notes are in `knowledge/features.md`.
 
@@ -14,10 +14,10 @@ design to a feature. Detailed feature notes are in `knowledge/features.md`.
 |---|---|
 | Purpose & audience | |
 | Shape | Conversational agent / autonomous agent / **workflow** (deterministic, with agent steps) / multi-agent |
-| Harness | **GitHub Copilot harness** (new experience: skills, memory, Work IQ, MCP/workflow tools; production-ready preview) vs **standard harness** (classic topics-heavy, GA). Pick the standard harness for GA-only client requirements. |
+| Harness | **Microsoft Copilot harness** (Learn's name for the new experience, previously called the GitHub Copilot harness: skills, memory, Work IQ, MCP/workflow tools; production-ready preview), **Customer Conversation harness** (preview: speech/chat contact-centre style agents with sub-agents and human escalation) or **standard harness** (classic topics-heavy, GA; default model GPT-5.5 Chat). Pick the standard harness for GA-only client requirements. Existing standard agents can be upgraded to the Microsoft Copilot harness (preview, with a migration report). |
 | Model | Default unless there's a reason. Options include GPT-5.x and Claude models; check data-residency for external models |
-| Channels | Teams / M365 Copilot / web (Entra SSO) / SMS / voice |
-| Knowledge | SharePoint, Dataverse tables, Azure SQL, files, websites, Fabric IQ / Foundry IQ (preview), Work IQ |
+| Channels | Teams / M365 Copilot / web (Entra SSO) / SMS / voice / MCP and A2A channels (preview). WhatsApp via the Azure Communication Services channel is closed to new agents since 23 Oct 2026 |
+| Knowledge | SharePoint, Dataverse tables, Azure SQL, files, websites, Fabric IQ / Foundry IQ (preview), Work IQ (GA, added by default to new Microsoft Copilot harness agents), OneDrive for Business |
 | Tools | Agent flows/workflows, connectors, MCP servers, other agents (A2A), prompts, computer use, skills |
 | Topics | Only where deterministic control is needed |
 | Human-in-the-loop | Human review / request information actions; escalation path |
@@ -63,14 +63,15 @@ Write agent instructions under these headings: **Role**, **Scope** (what it does
   user's M365 data.
 - Long-running agent flows: use **asynchronous responses** to get past the two-minute limit.
 
-## 6. Skills (GitHub Copilot harness)
+## 6. Skills (Microsoft Copilot harness)
 - A skill is a zip with `SKILL.md`, `scripts/` (Python, run in the agent runtime) and `assets/`
   at the root, not nested in a folder. Use one for reusable expertise, or for file generation and
   processing that connectors can't do (Word/Excel/PDF output, charts).
 - Review the generated SKILL.md and code line by line. Specify file naming, paths and output
   behaviour precisely. Test with both complete and incomplete inputs so the agent asks for missing
   details before running the script.
-- A skill can be reused across agents and exported as Markdown or a package.
+- A skill can be reused across agents and exported as Markdown or a package. Marketplace-shared
+  skills can be shared with named people or the organisation (preview); review third-party skills before adding.
 
 ## 7. Knowledge
 - Prefer curated, single-domain sources. Use SharePoint metadata filters to target current documents.
@@ -83,6 +84,17 @@ Write agent instructions under these headings: **Role**, **Scope** (what it does
 
 ## 8. Tools
 - Agent flows and workflows: follow `powerautomate-standards`.
+- **Hooks (new, Devaney Nov 2026; status not stated, check Learn).** A hook runs a workflow at set
+  points (e.g. pre-tool use). Use one to enforce a rule the instructions can't guarantee, such as
+  allowing only approved SharePoint list IDs. Filter the trigger to the specific tools, return a
+  clear denial reason via `permissionDecision` / `permissionDecisionReason`, and check workflow history.
+- **Triggers and agent account (preview).** Event triggers run an agent autonomously; an agent
+  account gives it its own Entra ID, mailbox and Teams presence. Treat these as separate identities for governance.
+- **Copilot Studio MCP.** VS Code and GitHub Copilot CLI can create, test and deploy agents via Copilot Studio MCP.
+- **Declarative agents (M365 Agents Toolkit).** For pro-code M365 Copilot agents, add an MCP server
+  (none / OAuth dynamic / OAuth static registration) or a custom OpenAPI API. Add the API-key security
+  scheme to the spec by hand, store keys in the vault (not in the spec), and test with `AGENT_SCOPE=personal`
+  because shared agents need admin approval.
 - MCP servers: prefer certified or well-maintained servers, and scope them to the minimum operations.
 - Connector tools: add only the operations needed, each with a description.
 - Computer use (GA): only where no API exists. Use pooled Cloud PCs, built-in credentials and audit logging.
@@ -106,5 +118,7 @@ Write agent instructions under these headings: **Role**, **Scope** (what it does
 - DLP allows the connectors and MCP servers used.
 - Entra Agent ID and Conditional Access are in place. Onboard to Agent 365 where the tenant uses it.
 - Image rendering and embedded-URL controls are set for the environment.
+- Knowledge-source restrictions (local files, SharePoint/OneDrive, public websites) are set in the Power Platform admin centre.
+- Model changes: an agent can stay on its previous model for up to 30 days after a default upgrade. Test and migrate in that window.
 - External model data-residency is accepted by the client.
 - Owners, support contact, credit budget and maintenance plan are documented.
