@@ -3,12 +3,12 @@
 Maintained by `knowledge-refresh`. Status as of the date shown. Source: Microsoft Learn
 *What's new* unless noted. Always re-check before you commit a client design to a feature.
 
-| Feature | Status (as of 2026-10-15) | Since | Notes |
+| Feature | Status (as of 2026-11-23) | Since | Notes |
 |---|---|---|---|
-| New experience / GitHub Copilot harness | Production-ready preview | Jun 2026 | Enhanced orchestration runtime alongside the standard harness |
+| New experience / Microsoft Copilot harness (formerly shown as GitHub Copilot harness) | Production-ready preview | Jun 2026 | Enhanced orchestration runtime alongside the standard harness |
 | Skills (SKILL.md + scripts + assets) | Harness feature | Jun 2026 | Reusable, exportable; Python runtime with 50+ packages (Devaney, Aug 2026) |
 | Memory | Harness feature | Jun 2026 | Per-user persistent context |
-| Work IQ | Harness feature / preview | Mar–Aug 2026 | Grounds agents in M365 mail, calendar, files and chats |
+| Work IQ | **GA** (default on new Microsoft Copilot harness agents; write ops on by default) | Mar–Oct 2026 | Grounds agents in M365 mail, calendar, files and chats |
 | Connected agents (other agents) on the harness | Preview | Jun 2026 | Front-door agent pattern |
 | Agent-to-agent (A2A) protocol | GA | Apr 2026 | |
 | Workflow / MCP server as a tool (harness) | Preview | Jul 2026 | |
@@ -19,6 +19,20 @@ Maintained by `knowledge-refresh`. Status as of the date shown. Source: Microsof
 | Azure SQL tables as knowledge | Live | Aug 2026 | |
 | Fabric IQ / Foundry IQ grounding | Preview | Jun–Aug 2026 | |
 | Image rendering / embedded URL control | Live | Aug 2026 | Admin-centre setting |
+| Customer Conversation harness | Preview | Oct 2026 | Speech/chat, sub-agents, human escalation; Copilot Credits |
+| Upgrade standard agent to Microsoft Copilot harness | Preview | Oct 2026 | Migration report; topics become skills/workflows |
+| MCP and A2A channels (agent exposed as MCP server / A2A agent) | Preview | Oct 2026 | Entra ID auth |
+| Copilot Studio MCP (author agents from VS Code / Copilot CLI) | Live | Oct 2026 | |
+| Marketplace-shared skills | Preview | Oct 2026 | |
+| Agent account (own Entra ID, mailbox, Teams) | Preview | Oct 2026 | |
+| Event triggers for autonomous agents | Preview | Oct 2026 | |
+| Connected agents: Foundry / M365 Agents SDK agents; A2A connected agent | Live / preview (A2A) | Oct 2026 | |
+| Agent hooks (workflow at pre-tool-use etc.) | Status unconfirmed | Nov 2026 | Devaney tutorial; not yet on Learn What's new |
+| Admin control of knowledge sources; OneDrive for Business knowledge | Live | Oct 2026 | Purview labels supported |
+| Model retirement grace (30 days) | Live | Oct 2026 | |
+| Default model GPT-5.5 Chat (standard harness); Claude Opus 4.8 GA; GPT-5.3 Chat preview | Live | Oct 2026 | |
+| Privacy statement link | Preview | Oct 2026 | |
+| WhatsApp (ACS channel) closed to new agents | Retired for new connections | 23 Oct 2026 | |
 | Extract node (workflows) | Live | Sep 2026 | Devaney tutorial Oct 2026 |
 | Copilot node (workflows) | Preview | Sep 2026 | Runs Copilot Chat / Cowork tasks, Researcher, Analyst |
 | Model picker incl. experimental models | Live | Sep 2026 | |
@@ -36,6 +50,9 @@ Maintained by `knowledge-refresh`. Status as of the date shown. Source: Microsof
 ## Devaney build patterns (recent)
 | Date | Pattern | Link |
 |---|---|---|
+| 2026-11-22 | M365 Agents Toolkit: connect an MCP server (none / OAuth dynamic / static) to a declarative agent | https://www.matthewdevaney.com/m365-agents-toolkit-connect-mcp-server-to-declarative-agent/ |
+| 2026-11-09 | Agent hooks: pre-tool-use workflow that allow-lists SharePoint lists | https://www.matthewdevaney.com/how-to-use-agent-hooks-in-copilot-studio/ |
+| 2026-10-26 | M365 Agents Toolkit: custom OpenAPI API with API key | https://www.matthewdevaney.com/m365-agents-toolkit-add-a-custom-api-to-an-agent/ |
 | 2026-10-11 | Extract node: document fields into a SharePoint library | https://www.matthewdevaney.com/how-to-extract-data-from-pdfs-word-excel-in-copilot-studio/ |
 | 2026-09-27 | Human review on AI decisions with an audit trail | https://www.matthewdevaney.com/copilot-studio-ask-for-human-review-on-ai-decisions/ |
 | 2026-09-13 | Multi-agent workflows: narrow agents, parallel branches, deterministic rules | https://www.matthewdevaney.com/how-to-build-multi-agent-workflows-in-copilot-studio/ |
